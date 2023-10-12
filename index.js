@@ -38,4 +38,21 @@ function caesarCipher(string, shiftValue) {
   return codedStringArray.join("");
 }
 
-module.exports = { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(array) {
+  array.sort((a, b) => a - b);
+  const min = array[0];
+  const max = array[array.length - 1];
+  const length = array.length;
+  const average = Math.floor(
+    array.reduce((total, current) => total + current, array[0]) / array.length
+  );
+  return { average, min, max, length };
+}
+
+module.exports = {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+};
